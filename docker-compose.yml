@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}guildmanagersc
     build:
       context: .
-      dockerfile: GuildManagerSC/Dockerfile
+      dockerfile: src/GuildManagerSC/Dockerfile

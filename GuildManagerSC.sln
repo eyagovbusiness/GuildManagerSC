@@ -3,9 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildManagerSC", "GuildManagerSC\GuildManagerSC.csproj", "{EC8DA22D-9D90-434C-AF85-CD4D0DCED0E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuildManagerSC", "src\GuildManagerSC\GuildManagerSC.csproj", "{EC8DA22D-9D90-434C-AF85-CD4D0DCED0E4}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BFD999F9-3365-40B9-9BF2-8DC98A815288}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6D04C578-91D0-4B3A-860D-8D4C2F75286B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TheGoodFramework", "TheGoodFramework", "{AA02579D-7F5E-4470-ACB4-D23689B646BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E165D3AD-06A5-4D03-A2BB-26702119F746}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Application", "TheGoodFramework\src\CleanArchitecture\TheGoodFramework.CA.Application\TGF.CA.Application.csproj", "{7E3E67CC-A7C4-4B3F-9436-D3588BCF6246}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Presentation", "TheGoodFramework\src\CleanArchitecture\TheGoodFramework.CA.Presentation\TGF.CA.Presentation.csproj", "{2457629B-D1AA-4E0F-A4BB-83B24773CBB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.Common.Logging", "TheGoodFramework\src\Common\TheGoodFramework.Common.Logging\TGF.Common.Logging.csproj", "{C6448EB0-0527-4352-B3D5-9B055B5D9989}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +33,28 @@ Global
 		{BFD999F9-3365-40B9-9BF2-8DC98A815288}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFD999F9-3365-40B9-9BF2-8DC98A815288}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFD999F9-3365-40B9-9BF2-8DC98A815288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E3E67CC-A7C4-4B3F-9436-D3588BCF6246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3E67CC-A7C4-4B3F-9436-D3588BCF6246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3E67CC-A7C4-4B3F-9436-D3588BCF6246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3E67CC-A7C4-4B3F-9436-D3588BCF6246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2457629B-D1AA-4E0F-A4BB-83B24773CBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2457629B-D1AA-4E0F-A4BB-83B24773CBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2457629B-D1AA-4E0F-A4BB-83B24773CBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2457629B-D1AA-4E0F-A4BB-83B24773CBB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6448EB0-0527-4352-B3D5-9B055B5D9989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6448EB0-0527-4352-B3D5-9B055B5D9989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6448EB0-0527-4352-B3D5-9B055B5D9989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6448EB0-0527-4352-B3D5-9B055B5D9989}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EC8DA22D-9D90-434C-AF85-CD4D0DCED0E4} = {6D04C578-91D0-4B3A-860D-8D4C2F75286B}
+		{E165D3AD-06A5-4D03-A2BB-26702119F746} = {AA02579D-7F5E-4470-ACB4-D23689B646BB}
+		{7E3E67CC-A7C4-4B3F-9436-D3588BCF6246} = {E165D3AD-06A5-4D03-A2BB-26702119F746}
+		{2457629B-D1AA-4E0F-A4BB-83B24773CBB7} = {E165D3AD-06A5-4D03-A2BB-26702119F746}
+		{C6448EB0-0527-4352-B3D5-9B055B5D9989} = {E165D3AD-06A5-4D03-A2BB-26702119F746}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B49DFA00-1F27-4323-92D1-7C47221BEAA1}
