@@ -1,6 +1,7 @@
 version: '3.4'
 
 services:
+
   guildmanagersc:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -11,3 +12,42 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  mandrilapi:
+    container_name: MandrilAPI
+    volumes:
+      - "${APPDATA}/Microsoft/UserSecrets:/.microsoft/usersecrets/:ro"
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    #ports:
+    #    - 7001:80
+    #    #- 8081:443
+    #environment:
+    #    - ASPNETCORE_ENVIRONMENT=Developement  
+    #    - ASPNETCORE_URLS=http://7001:80
+    build:
+        context: .
+        dockerfile: MandrilAPI\src\MandrilAPI\Dockerfile
+    restart: on-failure 
+
+  #guildmanagersc:
+  #  container_name: GuildManagerSC
+  #  environment:
+  #    - ASPNETCORE_ENVIRONMENT=Development
+  #    - ASPNETCORE_URLS=https://+:443;http://7000:80
+  #    #- ASPNETCORE_URLS=https://+:443;http://+:80
+  #  ports:
+  #    - "80"
+  #    - "443"
+  #  volumes:
+  #    - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+  #    - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  #  build:
+  #    context: .
+  #    dockerfile: src/GuildManagerSC/Dockerfile
+  #  restart: on-failure 
+  #  #depends_on:
+  #  #  - mandrilapi
+  #  #links:
+  #  #  - mandrilapi
+
+       
