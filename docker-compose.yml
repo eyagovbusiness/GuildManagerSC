@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  guildmanagersc:
+    image: ${DOCKER_REGISTRY-}guildmanagersc
+    build:
+      context: .
+      dockerfile: GuildManagerSC/Dockerfile
