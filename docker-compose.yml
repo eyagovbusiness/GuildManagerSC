@@ -1,8 +1,44 @@
 version: '3.4'
 
 services:
+
   guildmanagersc:
-    image: ${DOCKER_REGISTRY-}guildmanagersc
+    container_name: GuildManagerSC
+    env_file:
+      - .env
+    environment:
+      - ASPNETCORE_URLS=http://+:80 #need to enable aspnetcore urls inside the container
+    ports:
+       - 7000:80
     build:
       context: .
       dockerfile: src/GuildManagerSC/Dockerfile
+    restart: on-failure 
+    links:
+      - mandrilapi
+
+  vault:
+    container_name: vault
+    env_file:
+      - .env
+    environment:
+      VAULT_ADDR: "http://localhost:7001"
+      VAULT_TOKEN: "${ValutToken}" # to be able to use the cli on dev
+      VAULT_DEV_ROOT_TOKEN_ID: "${ValutToken}"
+    ports:
+      - 7001:8200
+    image: vault:latest
+    restart: on-failure 
+
+  mandrilapi:
+    container_name: MandrilAPI
+    env_file:
+      - .env
+    environment:
+      - ASPNETCORE_URLS=http://+:6002 #need to enable aspnetcore urls inside the container
+    ports:
+      - 7002:6002
+    build:
+      context: .
+      dockerfile: MandrilAPI\src\MandrilAPI\Dockerfile
+    restart: on-failure 
