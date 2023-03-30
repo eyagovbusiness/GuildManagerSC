@@ -6,16 +6,12 @@ services:
     container_name: GuildManagerSC
     env_file:
       - .env
-    environment:
-      - ASPNETCORE_URLS=http://+:80 #need to enable aspnetcore urls inside the container
     ports:
        - 7000:80
     build:
       context: .
       dockerfile: src/GuildManagerSC/Dockerfile
     restart: on-failure 
-    links:
-      - mandrilapi
 
   vault:
     container_name: vault
@@ -34,11 +30,14 @@ services:
     container_name: MandrilAPI
     env_file:
       - .env
-    environment:
-      - ASPNETCORE_URLS=http://+:6002 #need to enable aspnetcore urls inside the container
     ports:
-      - 7002:6002
+      - 7002:80
     build:
       context: .
       dockerfile: MandrilAPI\src\MandrilAPI\Dockerfile
     restart: on-failure 
+
+networks:
+  default:
+    name: SCGuildManagerNetwork
+    driver: bridge
