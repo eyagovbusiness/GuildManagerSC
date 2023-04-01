@@ -56,5 +56,10 @@ Additionally the user can also select how to be notified about the service reque
 ### Diplomacy
 The guild’s webpage will have a Diplomacy section where all the current relationships with other guilds will be displayed. The user will be able to filter by the type of diplomatic status(like Economic Ally, Military Ally, Non-Aggression agreement, Enemy…).  Each diplomatic relationship will have a short description and the date when it was created. Additionally a diplomatic relationship can also have an Expiry date (i.e:Non-Aggression agreements).
 
+
+### Justice
+The webpage has to support an incident report system where guild members can report incidents with other members, the dedicated judge members will manage the reports and may create sentences from them in case it is pertinent. The first approach establishes that a guild member with 3 issued sentences will be kicked from the guild.
+
+
 ## Unified Domain Model (Class diagram)
 ![Model](./doc/ClassDiagram.png)
