@@ -29,6 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MandrilBot", "MandrilAPI\sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchitecture", "CleanArchitecture", "{6213E9ED-68B2-4EDB-83F8-3A27F3DFE76B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{2FE34A80-9202-4D23-AE67-33B1AE3C3944}"
+	ProjectSection(SolutionItems) = preProject
+		doc\ClassDiagram.png = doc\ClassDiagram.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
