@@ -2,16 +2,12 @@ version: '3.4'
 
 services:
 
-  guildmanagersc:
-    container_name: GuildManagerSC
-    env_file:
-      - .env
+  rabbitmq:
+    image: rabbitmq:3.11.11-management-alpine
+    container_name: rabbitmq
     ports:
-       - 7000:80
-    build:
-      context: .
-      dockerfile: src/GuildManagerSC/Dockerfile
-    restart: on-failure 
+        - 15672:15672
+        - 5672:5672
 
   vault:
     container_name: vault
@@ -25,6 +21,19 @@ services:
       - 7001:8200
     image: vault:latest
     restart: on-failure 
+    depends_on:
+      - rabbitmq
+
+  guildmanagersc:
+    container_name: GuildManagerSC
+    env_file:
+      - .env
+    ports:
+       - 7000:80
+    build:
+      context: .
+      dockerfile: src/GuildManagerSC/Dockerfile
+    restart: on-failure 
 
   mandrilapi:
     container_name: MandrilAPI
@@ -36,6 +45,7 @@ services:
       context: .
       dockerfile: MandrilAPI\src\MandrilAPI\Dockerfile
     restart: on-failure 
+
 
 networks:
   default:
