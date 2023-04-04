@@ -1,5 +1,11 @@
 # GuildManagerSC
 
+## Mission
+This is a personal project I have decided to make altruistically for a gaming community of which I am a part, in collaboration with other members of the community which will develop other parts of the final product as the frontend or the cloud infrastructure in production. The mission is to have a final product that brings a webpage to our community that we can enjoy, speedup some community management tasks, bring new brand features to our daily gaming sessions as a community as well as a strong discord integration. Additionally this project will be my coding skills farming where I will experiment with new or less known technologies for me, therefore some of the design decissions will be taken accordingly with this premise rather than lookign for the fastest or efficent options.
+
+## Technolgies and design patterns
+**ASP.NET Core**, producer-consumer with **Rabbit MQ**, API Gateway with **YARP**, **CQRS** with **MediatR**, **EntityFramework** with **MySql**, secrets management with **Vault**, service registry with **Consul**, microservices with **Docker** and container orchestration, **DDD**, **CleanArchitecture**... These are just some examples of the many technologies and patters that will be used in this project.
+
 ## Formal description
 The objective is to have a guild web page with a Discord server integrated, designed to manage the following aspects a StarCitizen guild: 
 
@@ -62,4 +68,13 @@ The webpage has to support an incident report system where guild members can rep
 
 
 ## Unified Domain Model (Class diagram)
+
+For this project I have choose a Model first approach and for that purpose I have created a monolythic model of the whole application to have a clear and somple image of the domain model.
 ![Model](./doc/ClassDiagram.png)
+
+
+## Architecture
+
+As far as this is a personal project I have decided to oversize the architechture to train, experiment and learn with some technologies, patterns and principles that are relatively new for me but I am interested in mastering them.
+![Architecture](./doc/Architecture.png)
+
