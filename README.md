@@ -70,11 +70,15 @@ The webpage has to support an incident report system where guild members can rep
 ## Unified Domain Model (Class diagram)
 
 For this project I have choose a Model first approach and for that purpose I have created a monolythic model of the whole application to have a clear and somple image of the domain model.
+
+
 ![Model](./doc/ClassDiagram.png)
 
 
 ## Architecture
 
 As far as this is a personal project I have decided to oversize the architechture to train, experiment and learn with some technologies, patterns and principles that are relatively new for me but I am interested in mastering them.
+
+
 ![Architecture](./doc/Architecture.png)
 
