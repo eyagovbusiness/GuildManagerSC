@@ -40,6 +40,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E29E65
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.Common.Extensions", "TheGoodFramework\src\Common\TheGoodFramework.Common.Extensions\TGF.Common.Extensions.csproj", "{044D251E-DEC5-47E5-A8D0-FDE53BFF9062}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.Common.ROP", "TheGoodFramework\src\Common\TheGoodFramework.Common.ROP\TGF.Common.ROP.csproj", "{D5706821-96EE-49EC-B352-7379A5052014}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,10 @@ Global
 		{044D251E-DEC5-47E5-A8D0-FDE53BFF9062}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{044D251E-DEC5-47E5-A8D0-FDE53BFF9062}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{044D251E-DEC5-47E5-A8D0-FDE53BFF9062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5706821-96EE-49EC-B352-7379A5052014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5706821-96EE-49EC-B352-7379A5052014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5706821-96EE-49EC-B352-7379A5052014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5706821-96EE-49EC-B352-7379A5052014}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +105,7 @@ Global
 		{52887C0C-B671-4B70-8A1E-386836A0700F} = {6213E9ED-68B2-4EDB-83F8-3A27F3DFE76B}
 		{E29E6511-BCCD-4B0C-BA60-E92F3DA864BC} = {E165D3AD-06A5-4D03-A2BB-26702119F746}
 		{044D251E-DEC5-47E5-A8D0-FDE53BFF9062} = {E29E6511-BCCD-4B0C-BA60-E92F3DA864BC}
+		{D5706821-96EE-49EC-B352-7379A5052014} = {E29E6511-BCCD-4B0C-BA60-E92F3DA864BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B49DFA00-1F27-4323-92D1-7C47221BEAA1}
