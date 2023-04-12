@@ -1,4 +1,4 @@
-using TGF.CA.Application;
+using TGF.CA.Application.Setup;
 
 namespace GuildManagerSC
 {
