@@ -42,15 +42,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CC273CDD-726D-4637-BDCD-BCE9C8F7F889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGF.CA.Infrastructure.Communication", "..\TGF.CA.Infrastructure.Communication\TGF.CA.Infrastructure.Communication.csproj", "{4481F1FF-6366-4011-849F-FA436410D163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Infrastructure.Communication", "..\TGF.CA.Infrastructure.Communication\TGF.CA.Infrastructure.Communication.csproj", "{4481F1FF-6366-4011-849F-FA436410D163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGF.CA.Infrastructure.Persistence", "..\TGF.CA.Infrastructure.Persistence\TGF.CA.Infrastructure.Persistence.csproj", "{A776F2DA-4C42-457E-B735-DA76868F2C74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Infrastructure.Persistence", "..\TGF.CA.Infrastructure.Persistence\TGF.CA.Infrastructure.Persistence.csproj", "{A776F2DA-4C42-457E-B735-DA76868F2C74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGF.CA.Infrastructure.Secrets", "..\TGF.CA.Infrastructure.Secrets\TGF.CA.Infrastructure.Secrets.csproj", "{ED48CE81-DCE1-47D1-B8C5-E6163BDEF28A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Infrastructure.Secrets", "..\TGF.CA.Infrastructure.Secrets\TGF.CA.Infrastructure.Secrets.csproj", "{ED48CE81-DCE1-47D1-B8C5-E6163BDEF28A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{674FFF43-66CF-4669-8A0F-444501EF49DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGF.CA.Presentation.Middleware", "..\TGF.CA.Presentation.Middleware\TGF.CA.Presentation.Middleware.csproj", "{6ABDB4CF-297D-4D01-A831-D2FCE82247C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Presentation.Middleware", "..\TGF.CA.Presentation.Middleware\TGF.CA.Presentation.Middleware.csproj", "{6ABDB4CF-297D-4D01-A831-D2FCE82247C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
