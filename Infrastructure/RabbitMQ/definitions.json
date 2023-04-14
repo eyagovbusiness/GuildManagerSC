@@ -1,0 +1,27 @@
+{
+  "users": [],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [],
+  "parameters": [],
+  "policies": [
+    {"vhost":"/","name":"DLX","pattern":".*","apply-to":"queues","definition":{"dead-letter-exchange":"dead-letter.exchange"},"priority":0}
+  ],
+  "queues": [
+    {"name":"mandril-queue","vhost":"/","durable":true,"auto_delete":false,"arguments":{}},
+    {"name":"mandril-queue.dead-letter","vhost":"/","durable":true,"auto_delete":false,"arguments":{}}
+  ],
+  "exchanges": [
+    {"name":"api.gateway.exchange","vhost":"/","type":"direct","durable":true,"auto_delete":false,"internal":false,"arguments":{}},
+    {"name":"mandril.exchange","vhost":"/","type":"topic","durable":true,"auto_delete":false,"internal":false,"arguments":{}},
+    {"name":"dead-letter.exchange","vhost":"/","type":"direct","durable":true,"auto_delete":false,"internal":false,"arguments":{}}
+  ],
+  "bindings": [
+    {"source":"api.gateway.exchange","vhost":"/","destination":"mandril.exchange","destination_type":"exchange","routing_key":"mandril","arguments":{}},
+    {"source":"mandril.exchange","vhost":"/","destination":"mandril-queue","destination_type":"queue","routing_key":"mandril","arguments":{}},
+    {"source":"dead-letter.exchange","vhost":"/","destination":"mandril-queue.dead-letter","destination_type":"queue","routing_key":"mandril","arguments":{}}
+  ]
+}

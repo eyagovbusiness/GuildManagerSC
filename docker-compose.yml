@@ -1,24 +1,34 @@
-version: '3.4'
+version: "3.9"
 
 services:
 
   rabbitmq:
     image: rabbitmq:3.11.11-management-alpine
     container_name: rabbitmq
+    #env_file:
+    #    - .env
+    #environment:
+    #    RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+    #    RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    #    RABBITMQ_DEFAULT_VHOST: /
     ports:
         - 15672:15672
         - 5672:5672
+    volumes: 
+        - ./Infrastructure/RabbitMQ/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+        - ./Infrastructure/RabbitMQ/definitions.json:/etc/rabbitmq/definitions.json
+        - ./Infrastructure/RabbitMQ/enabled_plugins:/etc/rabbitmq/enabled_plugins
 
   vault:
     container_name: vault
     env_file:
       - .env
     environment:
-      VAULT_ADDR: "http://localhost:7001"
+      VAULT_ADDR: "http://127.0.0.1:8200"
       VAULT_TOKEN: "${ValutToken}" # to be able to use the cli on dev
       VAULT_DEV_ROOT_TOKEN_ID: "${ValutToken}"
     ports:
-      - 7001:8200
+      - 8200:8200
     image: vault:latest
     restart: on-failure 
     depends_on:
