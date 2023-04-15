@@ -3,15 +3,16 @@ version: "3.9"
 services:
 
   rabbitmq:
-    image: rabbitmq:3.11.11-management-alpine
     container_name: rabbitmq
+    env_file:
+        - .env
     ports:
         - 15672:15672
         - 5672:5672
-    volumes: 
-        - ./Infrastructure/RabbitMQ/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
-        - ./Infrastructure/RabbitMQ/definitions.json:/etc/rabbitmq/definitions.json
-        - ./Infrastructure/RabbitMQ/enabled_plugins:/etc/rabbitmq/enabled_plugins
+    build: 
+      context: .
+      dockerfile: Infrastructure\RabbitMQ\Dockerfile
+
 
   vault:
     container_name: vault
@@ -24,6 +25,8 @@ services:
     ports:
       - 8200:8200
     image: vault:latest
+    volumes: 
+        - ./Infrastructure/Vault/vault_init.sh:/vault/config/vault_init.sh
     restart: on-failure 
     depends_on:
       - rabbitmq
@@ -47,7 +50,7 @@ services:
       - 7002:80
     build:
       context: .
-      dockerfile: MandrilAPI\src\MandrilAPI\Dockerfile
+      dockerfile: MandrilAPI/src/MandrilAPI/Dockerfile
     restart: on-failure 
 
 
