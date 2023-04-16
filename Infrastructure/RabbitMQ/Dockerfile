@@ -6,11 +6,7 @@ COPY ./Infrastructure/RabbitMQ/definitions.json /etc/rabbitmq/definitions.json
 RUN rm /etc/rabbitmq/enabled_plugins
 COPY ./Infrastructure/RabbitMQ/enabled_plugins /etc/rabbitmq/enabled_plugins
 
-EXPOSE 15672
-EXPOSE 5672
-
 RUN chmod +x /etc/rabbitmq/rabbitmq_init.sh
-
 CMD /bin/bash /etc/rabbitmq/rabbitmq_init.sh
 
 
