@@ -1,19 +1,32 @@
 #!/bin/bash
 
-## this is the code for the first part of the tutorial. 
-## example code for get KeyValue secrets. 
-docker exec -it vault vault kv put secret/rabbitmq username=$RABBITMQ_USER password=$RABBITMQ_PASSWORD
+echo "Vault initialization script started."
 
-## this is the code for the rabbitmq integration with vault
-docker exec -it vault vault secrets enable rabbitmq
+if [ "$ASPNETCORE_ENVIRONMENT" = "Development" ]; then
+	RabbitMQEcho="RabbitMQ key-value created for username = '$RABBITMQ_USER' and password = '$RABBITMQ_PASSWORD'";
+	MySqlEcho="MySql key-value created for username = '$MySql_USER' and password = '$MySql_PASSWORD'";
+else
+  	RabbitMQEcho="RabbitMQ key-value created for username and password";
+	MySqlEcho="MySql key-value created for username and password"; 
+fi
 
-docker exec -it vault vault write rabbitmq/config/connection \
-	connection_uri="http://rabbitmq:15672" \
-	username=$RABBITMQ_USER \
-	password=$RABBITMQ_PASSWORD
+##KeyValue secrets:
+##RabbitMQ
+vault kv put secret/rabbitmq username=$RABBITMQ_USER password=$RABBITMQ_PASSWORD && echo $RabbitMQEcho
+##MySql
+vault kv put secret/mysql username=$MySql_USER password=$MySql_PASSWORD && echo $MySqlEcho
 
-docker exec -it vault vault write rabbitmq/roles/distribt-role \
-	vhosts='{"/":{"write": ".*", "read": ".*"}}'
+##Using the RabbitMQ integration with Vault.
+vault secrets enable rabbitmq && echo "Vault integration with RabbitMQ enabled!"
 
-##User&Pass for MySql
-docker exec -it vault vault kv put secret/mysql username=$MySql_USER password=$MySql_PASSWORD
+(vault write rabbitmq/config/connection \
+    connection_uri="http://rabbitmq:15672" \
+    username=$RABBITMQ_USER \
+    password=$RABBITMQ_PASSWORD ; \
+echo "Vault integration with $RabbitMQEcho") &
+
+vault write rabbitmq/roles/GuildManagerSC-role \
+    vhosts='{"/":{"write": ".*", "read": ".*"}}'
+echo "RabbitMQ role created."	
+
+echo "Vault initialization script finished."

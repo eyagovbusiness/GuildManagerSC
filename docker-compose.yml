@@ -15,52 +15,38 @@ services:
       context: .
       dockerfile: Infrastructure/RabbitMQ/Dockerfile
 
-
   vault:
     container_name: vault
+    image: vault
     env_file:
       - .env
-    privileged: true
     environment:
-      VAULT_TOKEN: "${ValutToken}" # to be able to use the cli on dev
-      VAULT_DEV_ROOT_TOKEN_ID: "${ValutToken}"
+        VAULT_ADDR: "http://127.0.0.1:8200"
+        # in production scenarios the token mechanisim for loggin will be forbidden,
+        # it cannot be in source control.
+        VAULT_TOKEN: "vault-distribt-token" # to be able to use the cli on dev
+        VAULT_DEV_ROOT_TOKEN_ID: "vault-distribt-token"
+    cap_add:
+      - IPC_LOCK
     networks:
       - SCGuildManagerNetwork
     ports:
-      - 8200:8200
-    image: vault:latest
+        - "8200:8200"
     volumes:
-      - ./Infrastructure/Vault/vault_init.sh:/vault/config/vault_init.sh
-    #command: >
-    #  su -c "apk update && apk add bash && 
-    #         vault operator init -address=http://127.0.0.1:8200 &&
-    #         /bin/chmod +x /vault/config/vault_init.sh && 
-    #         /vault/config/vault_init.sh"
-    restart: on-failure 
+        - ./Infrastructure/Vault/vault_init.sh:/vault/config/vault_init.sh
+        - ./Infrastructure/Vault/vault_init.sh:/vault/config/vault.hcl
+    entrypoint:
+      - sh
+      - -c
+      - |
+        chmod +x /vault/config/vault_init.sh &&
+        vault server -dev &
+        sleep 10 &&
+        /bin/ash vault/config/vault_init.sh &&
+        sleep infinity
+    restart: on-failure
     depends_on:
       - rabbitmq
-
-  #vault:
-  #  container_name: vault
-  #  env_file:
-  #    - .env
-  #  privileged: true
-  #  environment:
-  #    VAULT_TOKEN: "${ValutToken}" # to be able to use the cli on dev
-  #    VAULT_DEV_ROOT_TOKEN_ID: "${ValutToken}"
-  #    #VAULT_DEV_MODE: true
-  #  command:
-  #    - "server"
-  #  networks:
-  #    - SCGuildManagerNetwork
-  #  ports:
-  #    - 8200:8200
-  #  build: 
-  #    context: .
-  #    dockerfile: Infrastructure/Vault/Dockerfile
-  #  restart: on-failure:10
-  #  depends_on:
-  #    - rabbitmq
 
   guildmanagersc:
     container_name: GuildManagerSC
@@ -91,3 +77,10 @@ services:
 networks:
   SCGuildManagerNetwork:
     driver: bridge
+#networks:
+#  SCGuildManagerNetwork:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 172.25.0.0/16
+#        - gateway: 172.25.0.1
