@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/dumb-init /bin/sh
+
+set -e
 
 echo "Vault initialization script started."
 

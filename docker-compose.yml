@@ -13,7 +13,6 @@ services:
       context: .
       dockerfile: Infrastructure/RabbitMQ/Dockerfile
 
-
   consul:
     container_name: consul
     ports:
@@ -26,34 +25,22 @@ services:
       dockerfile: Infrastructure/Consul/Dockerfile
 
   vault:
-    container_name: vault
-    image: vault
-    env_file:
-      - .env
-    environment:
-        VAULT_ADDR: "http://127.0.0.1:8200"
-        VAULT_TOKEN: "vault-distribt-token" # to be able to use the cli on dev
-        VAULT_DEV_ROOT_TOKEN_ID: "vault-distribt-token"
-    cap_add:
-      - IPC_LOCK
-    ports:
-        - "8200:8200"
-    volumes:
-        - ./Infrastructure/Vault/vault_init.sh:/vault/config/vault_init.sh
-        - ./Infrastructure/Vault/vault_init.sh:/vault/config/vault.hcl
-    entrypoint:
-      - sh
-      - -c
-      - |
-        chmod +x /vault/config/vault_init.sh &&
-        vault server -dev &
-        sleep 10 &&
-        /bin/ash vault/config/vault_init.sh &&
-        sleep infinity
-    restart: on-failure
-    depends_on:
-      - rabbitmq
-      - consul
+      container_name: vault
+      env_file:
+        - .env
+      ports:
+        - 8200:8200
+      environment:
+          VAULT_TOKEN: "${ValutToken}" #needed to use the cli on dev
+          VAULT_DEV_ROOT_TOKEN_ID: "${ValutToken}"
+      build: 
+          context: .
+          dockerfile: Infrastructure/Vault/Dockerfile
+      cap_add:
+        - IPC_LOCK
+      depends_on:
+        - rabbitmq
+        - consul
 
   guildmanagersc:
     container_name: GuildManagerSC
