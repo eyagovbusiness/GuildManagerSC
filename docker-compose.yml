@@ -6,14 +6,24 @@ services:
     container_name: rabbitmq
     env_file:
         - .env
-    networks:
-      - SCGuildManagerNetwork
     ports:
-        - 15672:15672
+        - 15672:15672 # port for management UI 
         - 5672:5672
     build: 
       context: .
       dockerfile: Infrastructure/RabbitMQ/Dockerfile
+
+
+  consul:
+    container_name: consul
+    ports:
+      - 8500:8500 # port for UI/API calls
+      - 8400:8400
+      - 8600:8600
+      - 8600:8600/udp 
+    build: 
+      context: .
+      dockerfile: Infrastructure/Consul/Dockerfile
 
   vault:
     container_name: vault
@@ -22,14 +32,10 @@ services:
       - .env
     environment:
         VAULT_ADDR: "http://127.0.0.1:8200"
-        # in production scenarios the token mechanisim for loggin will be forbidden,
-        # it cannot be in source control.
         VAULT_TOKEN: "vault-distribt-token" # to be able to use the cli on dev
         VAULT_DEV_ROOT_TOKEN_ID: "vault-distribt-token"
     cap_add:
       - IPC_LOCK
-    networks:
-      - SCGuildManagerNetwork
     ports:
         - "8200:8200"
     volumes:
@@ -47,13 +53,12 @@ services:
     restart: on-failure
     depends_on:
       - rabbitmq
+      - consul
 
   guildmanagersc:
     container_name: GuildManagerSC
     env_file:
       - .env
-    networks:
-      - SCGuildManagerNetwork
     ports:
        - 7000:80
     build:
@@ -65,8 +70,6 @@ services:
     container_name: MandrilAPI
     env_file:
       - .env
-    networks:
-      - SCGuildManagerNetwork
     ports:
       - 7002:80
     build:
@@ -74,9 +77,9 @@ services:
       dockerfile: MandrilAPI/src/MandrilAPI/Dockerfile
     restart: on-failure 
 
-networks:
-  SCGuildManagerNetwork:
-    driver: bridge
+#networks:
+#  SCGuildManagerNetwork:
+#    driver: bridge
 #networks:
 #  SCGuildManagerNetwork:
 #    driver: bridge
