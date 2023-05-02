@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\TheGoodFramework\src\CleanArchitecture\Application\TheGoodFramework.CA.Application\TGF.CA.Application.Setup.csproj" />
+    <ProjectReference Include="..\..\TheGoodFramework\src\CleanArchitecture\Infrastructure\TGF.CA.Infrastructure.Communication\TGF.CA.Infrastructure.Communication.csproj" />
   </ItemGroup>
 
 </Project>

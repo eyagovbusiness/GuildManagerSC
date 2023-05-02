@@ -31,8 +31,8 @@ services:
       ports:
         - 8200:8200
       environment:
-          VAULT_TOKEN: "${ValutToken}" #needed to use the cli on dev
-          VAULT_DEV_ROOT_TOKEN_ID: "${ValutToken}"
+          VAULT_TOKEN: "${VAULT_TOKEN}" #needed to use the cli on dev
+          VAULT_DEV_ROOT_TOKEN_ID: "${VAULT_TOKEN}"
       build: 
           context: .
           dockerfile: Infrastructure/Vault/Dockerfile
@@ -63,6 +63,8 @@ services:
       context: .
       dockerfile: MandrilAPI/src/MandrilAPI/Dockerfile
     restart: on-failure 
+    depends_on:
+      - vault
 
 #networks:
 #  SCGuildManagerNetwork:
