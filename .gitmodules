@@ -1,6 +1,6 @@
 [submodule "MandrilAPI"]
 	path = MandrilAPI
-	url = https://github.com/eyagovbusiness/MandrilAPI/tree/Integration
+	url = https://github.com/eyagovbusiness/MandrilAPI
 [submodule "TheGoodFramework"]
 	path = TheGoodFramework
-	url = https://github.com/eyagovbusiness/TheGoodFramework/tree/Integration
+	url = https://github.com/eyagovbusiness/TheGoodFramework
