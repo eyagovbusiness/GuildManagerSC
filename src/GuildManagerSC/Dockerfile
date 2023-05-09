@@ -7,16 +7,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["GuildManagerSC/GuildManagerSC.csproj", "GuildManagerSC/"]
-RUN dotnet restore "GuildManagerSC/GuildManagerSC.csproj"
+COPY ["GuildManagerSC/GuildManagerSCApiGateway.csproj", "GuildManagerSC/"]
+RUN dotnet restore "GuildManagerSC/GuildManagerSCApiGateway.csproj"
 COPY . .
 WORKDIR "/src/GuildManagerSC"
-RUN dotnet build "GuildManagerSC.csproj" -c Release -o /app/build
+RUN dotnet build "GuildManagerSCApiGateway.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "GuildManagerSC.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "GuildManagerSCApiGateway.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "GuildManagerSC.dll"]
+ENTRYPOINT ["dotnet", "GuildManagerSCApiGateway.dll"]
