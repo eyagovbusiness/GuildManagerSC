@@ -38,9 +38,6 @@ services:
           dockerfile: Infrastructure/Vault/Dockerfile
       cap_add:
         - IPC_LOCK
-      depends_on:
-        - rabbitmq
-        - consul
 
   guildmanagersc:
     container_name: GuildManagerSC
@@ -63,8 +60,6 @@ services:
       context: .
       dockerfile: MandrilAPI/src/MandrilAPI/Dockerfile
     restart: on-failure 
-    depends_on:
-      - vault
 
 #networks:
 #  SCGuildManagerNetwork:

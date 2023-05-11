@@ -17,7 +17,7 @@ execute_after_start() {
 }
 
 echo "Starting entrypoint override" 
-execute_before_start
+#execute_before_start
 echo "CALLING BASE ENTRYPOINT WITH CMD: $@"
 exec /usr/local/bin/docker-entrypoint.sh "$@" &
 daemon_pid=$!
