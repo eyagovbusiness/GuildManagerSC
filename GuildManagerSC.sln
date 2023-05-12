@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "src\APIGateway\APIGateway.csproj", "{EC8DA22D-9D90-434C-AF85-CD4D0DCED0E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Temporary", "src\APIGateway\Temporary.csproj", "{EC8DA22D-9D90-434C-AF85-CD4D0DCED0E4}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BFD999F9-3365-40B9-9BF2-8DC98A815288}"
 EndProject
