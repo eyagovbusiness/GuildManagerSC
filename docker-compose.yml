@@ -12,6 +12,8 @@ services:
     build: 
       context: .
       dockerfile: Infrastructure/RabbitMQ/Dockerfile
+    mem_limit: 200m
+    restart: on-failure 
 
   consul:
     container_name: consul
@@ -23,6 +25,8 @@ services:
     build: 
       context: .
       dockerfile: Infrastructure/Consul/Dockerfile
+    mem_limit: 50m
+    restart: on-failure 
 
   vault:
       container_name: vault
@@ -36,6 +40,8 @@ services:
       build: 
           context: .
           dockerfile: Infrastructure/Vault/Dockerfile
+      mem_limit: 50m
+      restart: on-failure 
       cap_add:
         - IPC_LOCK
 
@@ -44,7 +50,7 @@ services:
   ###############################
 
   api-gateway:
-    container_name: ApiGateway
+    container_name: APIGateway
     env_file:
       - .env
     ports:
@@ -52,7 +58,8 @@ services:
     build:
       context: .
       dockerfile: src/APIGateway/Dockerfile
-    restart: on-failure 
+    mem_limit: 150m
+    restart: on-failure  
 
   mandrilapi:
     container_name: MandrilAPI
@@ -63,6 +70,7 @@ services:
     build:
       context: .
       dockerfile: MandrilAPI/src/MandrilAPI/Dockerfile
+    mem_limit: 200m
     restart: on-failure 
 
   ###################################
