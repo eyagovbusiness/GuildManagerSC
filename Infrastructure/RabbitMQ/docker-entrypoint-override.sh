@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
-#set -x
+# set -x
+
 source rabbitmq_init.sh
 source wait_for_service.sh
 
@@ -10,10 +11,11 @@ execute_before_start() {
 }
 
 execute_after_start() {
-	#sleep 2 #need to wait to let the original entrypoint to create the needed files and folders.
+	echo "Executing scheduled tasks after the base entrypoint exited.."
 	wait_for rabbitmq 15672 
 	rabbitmq_init_func
-	echo "DONE."
+	exec IsReadyServer.sh &
+	echo "Scheduled tasks after the base entrypoint exited..DONE."
 }
 
 echo "Starting entrypoint override" 

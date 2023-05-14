@@ -1,6 +1,8 @@
 #!/usr/bin/dumb-init /bin/sh
 
 set -e
+source wait_for_service.sh
+source consul_init.sh
 
 execute_before_start() {
     echo "Executing scheduled tasks before the base entrypoint starts.."
@@ -8,12 +10,11 @@ execute_before_start() {
 }
 
 execute_after_start() {
-    sleep 1
 	echo "Executing scheduled tasks after the base entrypoint exited.."
-	daemon_init_pid=$!
-	exec consul_init.sh &
-	wait $daemon_init_pid
-	echo "DONE."
+	wait_for consul 8500
+	consul_init_func
+	exec IsReadyServer.sh &
+	echo "Scheduled tasks after the base entrypoint exited..DONE."
 }
 
 echo "Starting entrypoint override" 

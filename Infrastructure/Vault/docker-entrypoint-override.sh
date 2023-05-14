@@ -1,7 +1,7 @@
 #!/usr/bin/dumb-init /bin/sh
-
 set -e
 #set -x
+
 source vault_init.sh
 source wait_for_service.sh
 
@@ -11,12 +11,13 @@ execute_before_start() {
 }
 
 execute_after_start() {
-	echo "Executing scheduled tasks after the base entrypoint exited.."
+	echo "Executing scheduled tasks after the base entrypoint exited.."	
 	wait_for vault 8200
 	vault_init_kv
-	wait_for rabbitmq 15672 
-	sleep 5 #needs to give time to rabbitmq_init to create and configure the user.
+	wait_IsReady rabbitmq
 	vault_init_rabbitmq
+	wait_IsReady consul
+	exec IsReadyServer.sh &
 	echo "Scheduled tasks after the base entrypoint exited..DONE."
 }
 
