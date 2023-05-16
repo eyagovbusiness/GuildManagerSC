@@ -66,6 +66,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7EBA9AC7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mandril.API.IntegrationTests", "MandrilAPI\src\Tests\IntegrationTests\Mandril.API.IntegrationTests\Mandril.API.IntegrationTests.csproj", "{91CEFA60-9B1D-4C84-8490-CB462541456D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.Common.Net", "TheGoodFramework\src\Common\TheGoodFramework.Common.Net\TGF.Common.Net.csproj", "{D2B28297-1472-43DC-B758-56D525F40A56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -136,6 +138,10 @@ Global
 		{91CEFA60-9B1D-4C84-8490-CB462541456D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91CEFA60-9B1D-4C84-8490-CB462541456D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91CEFA60-9B1D-4C84-8490-CB462541456D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2B28297-1472-43DC-B758-56D525F40A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B28297-1472-43DC-B758-56D525F40A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B28297-1472-43DC-B758-56D525F40A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B28297-1472-43DC-B758-56D525F40A56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -166,6 +172,7 @@ Global
 		{8E16FE6A-6120-4F5D-9E4F-E816B89092C8} = {7EBA9AC7-69F6-4FF5-BC57-63A7F3C7B2DB}
 		{7EBA9AC7-69F6-4FF5-BC57-63A7F3C7B2DB} = {D666E33F-6E19-435F-B1E1-B1746AF444C2}
 		{91CEFA60-9B1D-4C84-8490-CB462541456D} = {8E16FE6A-6120-4F5D-9E4F-E816B89092C8}
+		{D2B28297-1472-43DC-B758-56D525F40A56} = {E29E6511-BCCD-4B0C-BA60-E92F3DA864BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B49DFA00-1F27-4323-92D1-7C47221BEAA1}
