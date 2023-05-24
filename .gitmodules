@@ -1,8 +1,8 @@
 [submodule "MandrilAPI"]
 	path = MandrilAPI
 	url = https://github.com/eyagovbusiness/MandrilAPI
-	branch = Integration
+	branch = integration
 [submodule "TheGoodFramework"]
 	path = TheGoodFramework
 	url = https://github.com/eyagovbusiness/TheGoodFramework
-	branch = Integration
+	branch = integration
