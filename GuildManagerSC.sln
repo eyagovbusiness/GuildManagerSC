@@ -15,13 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E165D3AD-06A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.Common.Logging", "TheGoodFramework\src\Common\TheGoodFramework.Common.Logging\TGF.Common.Logging.csproj", "{C6448EB0-0527-4352-B3D5-9B055B5D9989}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MandrilAPI", "MandrilAPI", "{C99E2FEE-FF97-45D3-A364-87B638F82D3C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mandril", "Mandril", "{C99E2FEE-FF97-45D3-A364-87B638F82D3C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D666E33F-6E19-435F-B1E1-B1746AF444C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MandrilAPI", "MandrilAPI\src\MandrilAPI\MandrilAPI.csproj", "{2B7A9278-CCD8-4AFE-82D1-6BFD231FFFCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MandrilAPI", "Mandril\src\MandrilAPI\MandrilAPI.csproj", "{2B7A9278-CCD8-4AFE-82D1-6BFD231FFFCD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MandrilBot", "MandrilAPI\src\MandrilBot\MandrilBot.csproj", "{BF00A6DE-2FAB-4C89-AAAE-DA730ED0504C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MandrilBot", "Mandril\src\MandrilBot\MandrilBot.csproj", "{BF00A6DE-2FAB-4C89-AAAE-DA730ED0504C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchitecture", "CleanArchitecture", "{6213E9ED-68B2-4EDB-83F8-3A27F3DFE76B}"
 EndProject
@@ -64,7 +64,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "Integra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7EBA9AC7-69F6-4FF5-BC57-63A7F3C7B2DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mandril.API.IntegrationTests", "MandrilAPI\src\Tests\IntegrationTests\Mandril.API.IntegrationTests\Mandril.API.IntegrationTests.csproj", "{91CEFA60-9B1D-4C84-8490-CB462541456D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mandril.API.IntegrationTests", "Mandril\src\Tests\IntegrationTests\Mandril.API.IntegrationTests\Mandril.API.IntegrationTests.csproj", "{91CEFA60-9B1D-4C84-8490-CB462541456D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.Common.Net", "TheGoodFramework\src\Common\TheGoodFramework.Common.Net\TGF.Common.Net.csproj", "{D2B28297-1472-43DC-B758-56D525F40A56}"
 EndProject

@@ -3,3 +3,7 @@
 	url = https://github.com/eyagovbusiness/TheGoodFramework.git
 	branch = integration
 	update = rebase
+[submodule "Mandril"]
+	path = Mandril
+	url = https://github.com/eyagovbusiness/Mandril.git
+	branch = integration
