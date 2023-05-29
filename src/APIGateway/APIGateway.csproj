@@ -8,6 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>8f26144a-45f1-4f4c-af04-a9ea1a4b7a5f</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
     <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
     <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>

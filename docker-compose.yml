@@ -50,7 +50,7 @@ services:
   ###############################
 
   api-gateway:
-    container_name: APIGateway
+    container_name: api-gateway
     env_file:
       - .env
     ports:
@@ -61,8 +61,8 @@ services:
     mem_limit: 150m
     restart: on-failure  
 
-  mandril:
-    container_name: Mandril
+  mandril-ms:
+    container_name: mandril-ms
     env_file:
       - .env
     ports:
