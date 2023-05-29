@@ -61,15 +61,15 @@ services:
     mem_limit: 150m
     restart: on-failure  
 
-  mandrilapi:
-    container_name: MandrilAPI
+  mandril:
+    container_name: Mandril
     env_file:
       - .env
     ports:
       - 7002:80
     build:
       context: .
-      dockerfile: MandrilAPI/src/MandrilAPI/Dockerfile
+      dockerfile: Mandril/src/MandrilAPI/Dockerfile
     mem_limit: 200m
     restart: on-failure 
 
