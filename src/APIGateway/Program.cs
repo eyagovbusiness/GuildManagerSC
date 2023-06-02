@@ -1,3 +1,4 @@
+using APIGateway.Health;
 using TGF.CA.Application.Setup;
 
 namespace GuildManagerSC
@@ -7,10 +8,13 @@ namespace GuildManagerSC
         public static void Main(string[] args)
         {
             var lWebApplication = WebApplicationAbstraction.CreateCustomWebApplication(
-                webHostBuilder =>
+                aWebHostBuilder =>
                 {
-                    webHostBuilder.Services.AddReverseProxy()
-                    .LoadFromConfig(webHostBuilder.Configuration.GetSection("ReverseProxy"));
+                    aWebHostBuilder.Services.AddReverseProxy()
+                    .LoadFromConfig(aWebHostBuilder.Configuration.GetSection("ReverseProxy"));
+                    aWebHostBuilder.AddHealthChceckServices();
+                    //aWebHostBuilder.Services.AddVaultSecretsManager(aWebHostBuilder.Configuration);
+                    //aWebHostBuilder.Services.AddServiceBusIntegrationPublisher(aWebHostBuilder.Configuration);
                 });
             lWebApplication.MapGet("/", () => "Hello World!");
             lWebApplication.MapReverseProxy();
