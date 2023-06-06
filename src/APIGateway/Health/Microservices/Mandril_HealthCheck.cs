@@ -8,7 +8,8 @@ namespace APIGateway.Health.Microservices
     public class Mandril_HealthCheck : ServiceHealthCheckBase
     {
         public Mandril_HealthCheck(IHttpClientFactory aHttpClientFactory, IServiceDiscovery aServiceDiscovery)
-            : base(aHttpClientFactory, aServiceDiscovery, aServiceName:AppServicesRegistry.Mandril){
+            : base(aHttpClientFactory, aServiceDiscovery, aServiceName: AppServicesRegistry.Mandril)
+        {
         }
 
         public override async Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext aContext, CancellationToken aCancellationToken = default)

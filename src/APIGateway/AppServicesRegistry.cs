@@ -1,6 +1,4 @@
-﻿using TGF.CA.Infrastructure.Discovery;
-
-namespace GuildManagerSCApiGateway
+﻿namespace GuildManagerSCApiGateway
 {
     /// <summary>
     /// Static class with the different application specific services registered in the ServiceRegistry.
