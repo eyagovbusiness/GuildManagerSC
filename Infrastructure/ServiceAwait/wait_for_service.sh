@@ -1,5 +1,5 @@
 #!/usr/bin/dumb-init /bin/sh
-#This script offers functions to facilitate waiting for a service to become available.
+#This script offers functions to wait for a service to become available.
 
 set -e
 # set -x
@@ -48,7 +48,6 @@ wait_IsReady() {
 	    exit 1
 	  fi
 	done
-	# echo "READY response recieved from $host Response: $RESPONSE"
 	echo "$host service is ready!!"
 }
 
