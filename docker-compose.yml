@@ -51,6 +51,8 @@ services:
   mysql:
     image: mysql:8-debian
     container_name: mysql
+    env_file:
+      - .env
     environment:
       MYSQL_DATABASE: 'GuildManagerSC'
     ports:

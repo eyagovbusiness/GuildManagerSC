@@ -1,4 +1,5 @@
 ﻿using APIGateway.Health.Microservices;
+using TGF.CA.Infrastructure.Persistence.DataBasesDI;
 using TGF.CA.Infrastructure.Secrets.Vault;
 
 namespace APIGateway.Health
@@ -16,12 +17,14 @@ namespace APIGateway.Health
                             .AddHealthChecks()
                             .AddCheck<Mandril_HealthCheck>(nameof(Mandril_HealthCheck))
                             .AddConsul(setup =>
-                             {
-                                 setup.HostName = "consul";
-                                 setup.RequireHttps = false;
-                                 setup.Port = 8500;
-                             }, name: "ServiceRegistry")
-                            .AddCheck<Vault_HealthCheck>("SecretsManager");
+                                {
+                                    setup.HostName = "consul";
+                                    setup.RequireHttps = false;
+                                    setup.Port = 8500;
+                                }, 
+                                name: "ServiceRegistry")
+                            .AddCheck<Vault_HealthCheck>("SecretsManager")
+                            .AddMySqlHealthCheck("GuildManagerSC");
             return aWebHostBuilder;
         }
     }

@@ -27,4 +27,6 @@ RUN dotnet publish "APIGateway.csproj" -c Release -o /app/publish /p:UseAppHost=
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "APIGateway.dll"]
+COPY Infrastructure/MicroserviceEntrypointOverrides/APIGatewayEntrypointOverride.sh ./entrypoint.sh
+COPY Infrastructure/ServiceAwait/wait_for_service.sh ./wait_for_service.sh
+ENTRYPOINT ["sh", "entrypoint.sh"]

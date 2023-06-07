@@ -12,7 +12,7 @@ fi
 ##RabbitMQ
 vault kv put secret/rabbitmq username=$RABBITMQ_USER password=$RABBITMQ_PASSWORD && echo $RabbitMQEcho
 ##MySql
-vault kv put secret/mysql username=$MySql_USER password=$MySql_PASSWORD && echo $MySqlEcho
+vault kv put secret/mysql username=$MYSQL_USER password=$MYSQL_PASSWORD && echo $MySqlEcho
 ##DiscordBot
 vault kv put secret/mandrilbot MandrilBotToken=$MandrilBot_TOKEN DiscordTargetGuildId=$MandrilBot_GUILD_ID && echo "mandrilbot secrets were set!"
 }
