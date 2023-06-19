@@ -15,6 +15,8 @@ vault kv put secret/rabbitmq username=$RABBITMQ_USER password=$RABBITMQ_PASSWORD
 vault kv put secret/mysql username=$MYSQL_USER password=$MYSQL_PASSWORD && echo $MySqlEcho
 ##DiscordBot
 vault kv put secret/mandrilbot MandrilBotToken=$MandrilBot_TOKEN DiscordTargetGuildId=$MandrilBot_GUILD_ID && echo "mandrilbot secrets were set!"
+##API authentication secret token
+vault kv put secret/apisecrets SecretKey=$API_PRIV_KEY && echo "API authentication secret token was set!"
 }
 
 function vault_init_rabbitmq(){

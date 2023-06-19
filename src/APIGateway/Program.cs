@@ -1,7 +1,7 @@
 using APIGateway.Health;
 using TGF.CA.Application.Services;
 using TGF.CA.Application.Setup;
-using TGF.CA.Infrastructure.Secrets;
+using TGF.CA.Infrastructure.Security.Secrets;
 
 namespace GuildManagerSC
 {

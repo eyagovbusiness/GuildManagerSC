@@ -1,6 +1,6 @@
 ﻿using APIGateway.Health.Microservices;
 using TGF.CA.Infrastructure.Persistence.DataBasesDI;
-using TGF.CA.Infrastructure.Secrets.Vault;
+using TGF.CA.Infrastructure.Security.Secrets.Vault;
 
 namespace APIGateway.Health
 {
