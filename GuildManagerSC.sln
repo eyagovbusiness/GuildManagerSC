@@ -68,13 +68,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.Common.Net", "TheGoodFr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{E131E12D-D69B-4B58-A7CD-C767F8E01583}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGF.CA.Infrastructure.Security.Identity", "TheGoodFramework\src\CleanArchitecture\Infrastructure\Security\TGF.CA.Infrastructure.Security.Identity\TGF.CA.Infrastructure.Security.Identity.csproj", "{AEA681C8-A7AF-4AA4-B41B-F7030691FCFF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Infrastructure.Security.Secrets", "TheGoodFramework\src\CleanArchitecture\Infrastructure\Security\TGF.CA.Infrastructure.Secrets\TGF.CA.Infrastructure.Security.Secrets.csproj", "{2D279E54-760F-44B9-AB71-1D4881EF4A0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Infrastructure.Security.Identity", "TheGoodFramework\src\CleanArchitecture\Infrastructure\Security\TGF.CA.Infrastructure.Security.Identity\TGF.CA.Infrastructure.Security.Identity.csproj", "{AEA681C8-A7AF-4AA4-B41B-F7030691FCFF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{780FE547-D7A2-4D9A-BBC3-D0BBFA03C95D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembersAPI", "src\Microservices\MembersAPI\MembersAPI.csproj", "{8E84C448-6294-4ABA-B301-C0AC89ED9566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MembersAPI", "src\Microservices\MembersAPI\MembersAPI.csproj", "{8E84C448-6294-4ABA-B301-C0AC89ED9566}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TGF.CA.Infrastructure.Security.Secrets", "TheGoodFramework\src\CleanArchitecture\Infrastructure\Security\TGF.CA.Infrastructure.Security.Secrets\TGF.CA.Infrastructure.Security.Secrets.csproj", "{A729BB37-B193-4B55-A94B-70BF984DBCFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -150,14 +150,14 @@ Global
 		{AEA681C8-A7AF-4AA4-B41B-F7030691FCFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEA681C8-A7AF-4AA4-B41B-F7030691FCFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEA681C8-A7AF-4AA4-B41B-F7030691FCFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D279E54-760F-44B9-AB71-1D4881EF4A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D279E54-760F-44B9-AB71-1D4881EF4A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D279E54-760F-44B9-AB71-1D4881EF4A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D279E54-760F-44B9-AB71-1D4881EF4A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E84C448-6294-4ABA-B301-C0AC89ED9566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E84C448-6294-4ABA-B301-C0AC89ED9566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E84C448-6294-4ABA-B301-C0AC89ED9566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E84C448-6294-4ABA-B301-C0AC89ED9566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A729BB37-B193-4B55-A94B-70BF984DBCFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A729BB37-B193-4B55-A94B-70BF984DBCFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A729BB37-B193-4B55-A94B-70BF984DBCFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A729BB37-B193-4B55-A94B-70BF984DBCFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -190,9 +190,9 @@ Global
 		{D2B28297-1472-43DC-B758-56D525F40A56} = {E29E6511-BCCD-4B0C-BA60-E92F3DA864BC}
 		{E131E12D-D69B-4B58-A7CD-C767F8E01583} = {CC273CDD-726D-4637-BDCD-BCE9C8F7F889}
 		{AEA681C8-A7AF-4AA4-B41B-F7030691FCFF} = {E131E12D-D69B-4B58-A7CD-C767F8E01583}
-		{2D279E54-760F-44B9-AB71-1D4881EF4A0E} = {E131E12D-D69B-4B58-A7CD-C767F8E01583}
 		{780FE547-D7A2-4D9A-BBC3-D0BBFA03C95D} = {6D04C578-91D0-4B3A-860D-8D4C2F75286B}
 		{8E84C448-6294-4ABA-B301-C0AC89ED9566} = {780FE547-D7A2-4D9A-BBC3-D0BBFA03C95D}
+		{A729BB37-B193-4B55-A94B-70BF984DBCFA} = {E131E12D-D69B-4B58-A7CD-C767F8E01583}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B49DFA00-1F27-4323-92D1-7C47221BEAA1}
