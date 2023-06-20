@@ -21,7 +21,7 @@ namespace APIGateway.Health
                                     setup.HostName = "consul";
                                     setup.RequireHttps = false;
                                     setup.Port = 8500;
-                                }, 
+                                },
                                 name: "ServiceRegistry")
                             .AddCheck<Vault_HealthCheck>("SecretsManager")
                             .AddMySqlHealthCheck("GuildManagerSC");
